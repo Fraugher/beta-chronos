@@ -30,8 +30,6 @@ function App() {
     callNetlifyFunction();
   }, []); // Empty dependency array ensures this runs once on mount
 
-
-
   return (
     <div className="App">
       <header className="App-header">
