@@ -4,11 +4,15 @@ exports.handler = async (event, context) => {
     const { param1, param2 } = event.queryStringParameters; 
 
     // Construct the URL for the external API
-    const externalApiUrl = `https://ssuowapy4e.execute-api.us-east-1.amazonaws.com/prod/swagger/`;
+    const API_URL =  process.env.CHRONOS_APP_BASE_URL;
+    const API_KEY =  process.env.CHRONOS_API_KEY;
 
     // Make the request to the external API
-    const response = await fetch(externalApiUrl);
+    const response = await fetch(`${API_URL}?apiKey=${API_KEY}`); // Example with query parameter
+    
     const data = await response.json();
+
+    console.log(JSON.stringify(data));
 
     // Return the data from the external API
     return {
@@ -17,7 +21,7 @@ exports.handler = async (event, context) => {
         "Access-Control-Allow-Origin": "*", // Allow CORS for your frontend
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ message: "Success!", data: data }),
     };
   } catch (error) {
     console.error("Error calling external API:", error);

@@ -37,18 +37,9 @@ function App() {
         <p>
           Chronos Time Machines
         </p>
-        <h1>Chronos-Api-HealthCheck</h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
       <h1>Chronos-Api-HealthCheck</h1>
-      {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+      {error && <p style={{ color: 'red' }}>Error Here: {error}</p>}
       {data && (
         <div>
           <p>Data from Netlify Function for Chronos-Api-HealthCheck:</p>
