@@ -9,7 +9,7 @@
       useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await fetch('/.netlify/functions/hello'); // Adjust the path if you have redirects
+            const response = await fetch('/.netlify/functions/healthcheck'); // Adjust the path if you have redirects
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
             }

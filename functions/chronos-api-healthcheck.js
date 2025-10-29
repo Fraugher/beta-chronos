@@ -7,11 +7,13 @@ exports.handler = async (event, context) => {
     const API_URL =  process.env.CHRONOS_API_BASE_URL; // "https://ssuowapy4e.execute-api.us-east-1.amazonaws.com/prod/";
     const API_KEY =  process.env.CHRONOS_API_KEY;
 
-
     const response = await fetch(API_URL, {
             method: 'GET', // Or POST, PUT, etc.
             headers: {
-              'Content-Type': 'application/json',
+            //   'Content-Type': 'application/json',
+            //   'Accept': 'application/json',
+            //   'Access-Control-Allow-Origin': '*',
+            //   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
               'X-API-KEY': API_KEY, // Include the API key in the header
             }
         });
