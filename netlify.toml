@@ -1,12 +1,6 @@
-# example netlify.toml
+[build]
+  command = "npm run build" # Or your preferred build command for your frontend
+  publish = "dist" # Or your preferred publish directory for your frontend
+
 [functions]
-directory="functions"
-node_bundler="esbuild"
-
-#[build]
- # functions = "functions"
-
-[[redirects]]
-from="/api/*"
-to="/.netlify/functions/:splat"
-status=200
+  directory = "netlify/functions" # This is the default, but explicitly setting it is good practice
