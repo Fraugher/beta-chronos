@@ -4,7 +4,7 @@ exports.handler = async (event, context) => {
     const { param1, param2 } = event.queryStringParameters; 
 
     // Construct the URL for the external API
-    const API_URL =  process.env.CHRONOS_APP_BASE_URL;
+    const API_URL =  "https://ssuowapy4e.execute-api.us-east-1.amazonaws.com/prod/";
     const API_KEY =  process.env.CHRONOS_API_KEY;
 
 
