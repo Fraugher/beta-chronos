@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Typography, Button, Box } from '@mui/material';
+import { Modal,  Box } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import CloseIcon from '@mui/icons-material/Close';
 import PartModal from './PartModal.js';
 import axios from 'axios';
 
@@ -33,7 +32,7 @@ function PartDescription(props) {
 
       const route = "/.netlify/functions/getPart?uuid=";
       const prefix = props.prefix ?? "";
-      const isMachine = (prefix!="");
+      const isMachine = (prefix!=="");
       const uuid = props.uuid;
       const quantity = props.quantity ?? "1";
       const useRoute = route + uuid;
@@ -56,7 +55,7 @@ function PartDescription(props) {
         };
 
         fetchPart();
-      }, [uuid]);
+      }, [uuid, useRoute]);
 
       if (loading) return <div>Loading part...</div>;
       if (error) return <div>Error: {error.message}</div>;

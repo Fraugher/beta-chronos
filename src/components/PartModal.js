@@ -17,7 +17,7 @@ export default function PartModal(props) {
     const [spanText, setSpanText] = useState(null);
     
     useEffect(() => {
-        if(!props.open) return null;
+        //if(!props.open) return null;
         const fetchPart = async () => {
           try {
             let route = "/.netlify/functions/getPart?uuid=";
@@ -50,7 +50,7 @@ export default function PartModal(props) {
     if (loading) return <div>Loading part...</div>;
     if (error) return <div>Error: {error.message}</div>;
 
-    const hasData =  (part && part.data);
+   // const hasData =  (part && part.data);
     const partName = part.data.name;
     const status = part.data.status;
 

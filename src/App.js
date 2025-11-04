@@ -1,5 +1,5 @@
+    import React from "react"
     // App.js
-    import React, { useState, useEffect } from 'react';
     import MachineList from './components/MachineList.js';
     import './App.css';
     

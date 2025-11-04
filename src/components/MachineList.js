@@ -12,12 +12,6 @@ function MachineList(props) {
 
       const route = "/.netlify/functions/getMachines";
 
-      const [openDiv, setOpenDiv] = useState(false);
-
-      const handleClick = () => {
-          setOpenDiv(!openDiv);
-      };
-
       useEffect(() => {
         const fetchMachines = async () => {
           try {
@@ -53,26 +47,14 @@ function MachineList(props) {
           {machines && machines.data && (
             <ul>
               {machines.data.map((data, index) => (
-                // (index <2) && 
                 <li>
-                <div>
-                   <PartDescription uuid={data.partUuid} verbose={props.verbose} prefix={data.endUnitSerialNo} />
-                </div>
-                {/* <Button
-                  sx={{ minWidth: 150, height: 22 }}
-                  onClick={handleClick}
-                  variant="contained"
-                  endIcon={openDiv ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                >
-                  {openDiv ? 'Hide Configurations' : 'Show Configurations'}
-                </Button>
-                <Collapse in={openDiv}> */}
+                  <div>
+                    <PartDescription uuid={data.partUuid} verbose={props.verbose} prefix={data.endUnitSerialNo} />
+                  </div>
                   <div>
                     <Configurations uuid={data.uuid} verbose={props.verbose} depth="1" />
                   </div>
-                {/* </Collapse> */}
                 </li> 
-            
                 )
                 )
               }

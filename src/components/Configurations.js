@@ -47,7 +47,7 @@ function ComponentList(props) {
           };
           fetchComponents();
         }
-      }, [isOpen, components]);
+      }, [isOpen, components, useRoute]);
 
       if (loading) return (
         <Button
