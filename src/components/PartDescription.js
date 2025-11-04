@@ -11,13 +11,15 @@ function PartDescription(props) {
       const [loading, setLoading] = useState(true);
       const [error, setError] = useState(null);
       const [isOpen, setIsOpen] = useState(false);
-      const [modal, setModal] = useState({ show: false, requestedModalId: 0});
 
-      const handleClose = (data) => {
+      const handleClose = (data, reason) => {
+        if (reason && reason === 'backdropClick') {
+          return; 
+        }
         try {
           if (data) {
             setPart(data);
-          } 
+          }
         }
         catch {}
         finally
