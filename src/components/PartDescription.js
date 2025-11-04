@@ -75,7 +75,10 @@ function PartDescription(props) {
       const unit = part.data.unit ?? "n/a";
       
       const modalStyle = {
-        'max-width': '80%'
+        'max-width': '80%',
+        'max-height': 'calc(100vh - 60px)',
+        'overflow-y': 'auto',
+        'margin-top': '20px'
       };
     
 
