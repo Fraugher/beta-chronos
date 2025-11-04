@@ -50,9 +50,6 @@
     "transform": {
       "^.+\\.(js|jsx)$": "babel-jest"
     },
-    "testEnvironment": "jsdom",
-    "moduleNameMapper": {
-      "^axios$": "axios/dist/node/axios.cjs"
-    }
+    "testEnvironment": "jsdom"
   }
 }
