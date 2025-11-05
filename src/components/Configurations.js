@@ -24,7 +24,7 @@ function ComponentList(props) {
       const depthClass = "level level" + depth;
 
       const route = "/.netlify/functions/getConfigurations?uuid=";
-      const useRoute = route + uuid;
+      const useRoute = encodeURI(route + uuid);
 
       useEffect(() => {
         if (isOpen && !components) {

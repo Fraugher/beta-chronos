@@ -37,7 +37,7 @@ function PartDescription(props) {
       const isMachine = (prefix!=="");
       const uuid = props.uuid;
       const quantity = props.quantity ?? "1";
-      const useRoute = route + uuid;
+      const useRoute = encodeURI(route + uuid);
 
       useEffect(() => {
         const fetchPart = async () => {

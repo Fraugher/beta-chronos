@@ -7,7 +7,7 @@ import axios from 'axios';
 export default function PartModal(props) {
     const uuid = props.uuid;
     const handleClose = props.handleClose;
-    const putRoute = "/.netlify/functions/putPart?uuid=" + uuid;
+    const putRoute = encodeURI("/.netlify/functions/putPart?uuid=" + uuid);
 
     const [part, setPart] = useState(null);
     const [partStatuses, setPartStatuses] = useState(null);

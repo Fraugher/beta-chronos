@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export async function getChronosAPI (route, id) {
     const useRoute = route.replace("{uuid}", id);
-    const API_URL =  process.env.CHRONOS_API_BASE_URL + useRoute;
+    const API_URL =  encodeURI(process.env.CHRONOS_API_BASE_URL + useRoute);
     const API_KEY =  process.env.CHRONOS_API_KEY;
     
   try {
